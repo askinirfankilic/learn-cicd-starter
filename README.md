@@ -26,8 +26,5 @@ This is some example comment.
 
 Another thing.
 
-<<<<<<< HEAD
 CI test.
-=======
 And one another thing.
->>>>>>> main
