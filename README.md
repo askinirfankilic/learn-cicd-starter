@@ -28,3 +28,6 @@ Another thing.
 
 CI test.
 And one another thing.
+
+
+![code coverage thing](https://github.com/askinirfankilic/learn-cicd-starter/actions/workflows/ci.yml/badge.svg)
