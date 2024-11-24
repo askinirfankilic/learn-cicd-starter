@@ -1,5 +1,8 @@
 name: ci
 
+env:
+  GO_VERSION: 1.23.0
+
 on:
   pull_request:
     branches: [main]
@@ -16,7 +19,22 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.23.0'
+          go-version: ${{ env.GO_VERSION }}
 
       - name: Run Tests
         run: go test -cover ./...
+
+  style:
+    name: Style
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ env.GO_VERSION }}
+
+      - name: Run Style Check
+        run: test -z "$(go fmt ./...)"
